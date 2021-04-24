@@ -1,7 +1,6 @@
 import React, { FC, useEffect } from "react";
 import * as d3 from "d3";
 import "./SeaSurfaceWave.scss";
-import { string } from "prop-types";
 
 interface ISeaSurfaceWaveProps {
     width: number,
@@ -41,7 +40,7 @@ const SeaSurfaceWave: FC<ISeaSurfaceWaveProps> = (props: ISeaSurfaceWaveProps) =
     };
 
     const eraseDrawing = () => {
-        const svg = d3
+        d3
             .select('.seaSurfaceWave')
             .selectChild('svg')
             .remove()
