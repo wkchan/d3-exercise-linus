@@ -100,7 +100,6 @@ const SeaSurfaceWave: FC<ISeaSurfaceWaveProps> = (props: ISeaSurfaceWaveProps) =
                 .domain([
                     0,
                     d3.max(data, (d) => {
-                        console.log(d.sea_surface_wave_significant_height)
                         if (isNumber(d.sea_surface_wave_significant_height)) {
                             return +d.sea_surface_wave_significant_height
                         } else {
