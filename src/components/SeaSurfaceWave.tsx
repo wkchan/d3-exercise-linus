@@ -60,7 +60,7 @@ const SeaSurfaceWave: FC<ISeaSurfaceWaveProps> = (props: ISeaSurfaceWaveProps) =
             .append('g')
             .attr('transform', `translate(${props.left},${props.top})`)
 
-        d3.csv('/data.csv', (d) => {
+        d3.csv('./data.csv', (d) => {
             const res = (d as unknown) as CSVData
 
             const date = d3.timeParse("%Y-%m-%dT%H:%M:%SZ")(res.datetime)
