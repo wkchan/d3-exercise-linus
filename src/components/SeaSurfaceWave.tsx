@@ -21,19 +21,6 @@ interface CSVData {
     wind_speed_at_10m_above_ground_level: number
 }
 
-interface JSONBody {
-    sea_surface_wave_from_direction_at_variance_spectral_density_maximum?: number,
-    surface_sea_water_speed?: number,
-    sea_surface_wave_maximum_height?: number
-
-
-}
-
-interface JSONData {
-    datetime: string,
-    values: JSONBody
-}
-
 const SeaSurfaceWave: FC<ISeaSurfaceWaveProps> = (props: ISeaSurfaceWaveProps) => {
 
 
@@ -65,14 +52,6 @@ const SeaSurfaceWave: FC<ISeaSurfaceWaveProps> = (props: ISeaSurfaceWaveProps) =
 
         const width = props.width - props.left - props.right
         const height = props.height - props.top - props.bottom
-
-
-
-
-        // const csvSource: CSVData = d3.json('/data.csv', (d: CSVData) => {
-        //     const res = (d as unknown) as CSVData
-        //     console.log(res)
-        // });
 
         const svg = d3
             .select('.seaSurfaceWave')
