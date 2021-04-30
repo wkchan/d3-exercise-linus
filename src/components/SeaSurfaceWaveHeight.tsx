@@ -52,8 +52,7 @@ interface IDataModel {
 
 const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurfaceWaveHeightProps) => {
 
-
-    const def_val = 0;
+    const def_val = -1;
 
     const isNumber = (value: string | number): boolean => {
         return ((value != null) &&
@@ -87,7 +86,6 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
         return function cleanup() {
             eraseDrawing();
         };
-
     })
 
     const eraseDrawing = () => {
@@ -97,9 +95,7 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
             .remove()
     }
 
-
     const draw = async () => {
-
 
         const jsonArray = await buildJSON();
 
@@ -154,7 +150,6 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                 const height = props.height - props.top - props.bottom
                 const colors = ['#008080', '#5C9DE6', '#3C3C3C', '#1F1F1F', '#C0C0C0', '#A0A0A0', '#3A3A3A']
 
-
                 const svg = d3
                     .select('.SeaSurfaceWaveHeight')
                     .append('svg')
@@ -172,8 +167,6 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                     )
                     .range([0, width])
 
-
-
                 svg.append('g').attr('transform', `translate(0, ${height})`).call(d3.axisBottom(xScale))
 
                 const yScale = d3
@@ -181,7 +174,6 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                     .domain([
                         0,
                         d3.max(data.flat(), (key) => {
-                            console.log(key.value)
                             return +key.value + 1
                         }),
                     ] as number[])
@@ -204,7 +196,6 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                     .attr('class', 'waterLevel')
                     ;
 
-
                 const pathLine = d3.line()
                     .x((d) => {
                         return xScale(((d as unknown) as { datetime: number }).datetime)
@@ -212,8 +203,12 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                     .y((d) => {
                         return yScale(((d as unknown) as { value: number }).value)
                     })
+                    .defined((d) => {
+                        const rtn = ((((d as unknown) as { value: number }).value) === def_val)
+                        return !rtn
+                    })
 
-                const path = waterLevel.append('path')
+                waterLevel.append('path')
                     .attr('class', 'line')
                     .attr('fill', "none")
                     .attr('stroke', (d: IDataModel[], i: number) => {
@@ -224,9 +219,7 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                         'd',
                         // @ts-ignore
                         pathLine
-
                     );
-
 
                 svg.append("text")
                     .attr("x", (width / 2))
@@ -236,8 +229,7 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                     .style("text-decoration", "underline")
                     .text("Sea Surface Wave Maximum Height and Significant Height vs Date Graph");
 
-                svg
-                    .selectAll('text.label')
+                svg.selectAll('text.label')
                     .data(data)
                     .join('text')
                     .attr('class', 'label')
@@ -245,7 +237,7 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                     .attr(
                         'y',
                         (d: IDataModel[], i: number) => {
-                            return yScale(d[d.length - 1].value) + (i * 50) - 100
+                            return (i * 50) + 100
                         }
                     )
                     .attr('dy', '0.35em')
@@ -254,7 +246,7 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                     })
                     .style('font-family', 'sans-serif')
                     .style('font-size', 12)
-                    .text(d => d[0].name);
+                    .text(d => " - " + d[0].name);
 
             })
     }
