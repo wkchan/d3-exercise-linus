@@ -148,10 +148,6 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
 
                 })
 
-                // const hover = (path: d3.Selection<SVGGElement, IDataModel[], SVGGElement, unknown>) => {
-
-                // }
-
                 const data: IDataModel[][] = [maximumData, significantData];
                 const margin = ({ top: 0, right: 0, bottom: 0, left: 0 })
                 const width = props.width - props.left - props.right
