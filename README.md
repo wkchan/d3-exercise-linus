@@ -1,5 +1,9 @@
 # MetService exercise
 
+# 20210430 Update:
+
+* [x] Display data from JSON and CSV in a single diagram
+
 # Objectives
 
 * [x] SPA built in React using Typescript
