@@ -174,7 +174,6 @@ const SeaSurfaceWaveHeight: FC<ISeaSurfaceWaveHeightProps> = (props: ISeaSurface
                     .domain([
                         0,
                         d3.max(data.flat(), (key) => {
-                            // console.log(key.value)
                             return +key.value + 1
                         }),
                     ] as number[])

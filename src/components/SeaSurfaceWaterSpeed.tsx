@@ -73,14 +73,8 @@ const SeaSurfaceWaterSpeed: FC<ISeaSurfaceWaterSpeedProps> = (props: ISeaSurface
 
     const draw = async () => {
 
-        console.log("waterspeed draw!");
-
 
         const data = await buildJSON();
-
-        data.map((d) => {
-            console.log(d.datetime.toISOString)
-        });
 
         const width = props.width - props.left - props.right
         const height = props.height - props.top - props.bottom
