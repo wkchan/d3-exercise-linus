@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/metservice-exercise-linus/static/css/main.a9a80852.chunk.css",
-    "main.js": "/metservice-exercise-linus/static/js/main.de435456.chunk.js",
-    "main.js.map": "/metservice-exercise-linus/static/js/main.de435456.chunk.js.map",
-    "runtime-main.js": "/metservice-exercise-linus/static/js/runtime-main.623600e0.js",
-    "runtime-main.js.map": "/metservice-exercise-linus/static/js/runtime-main.623600e0.js.map",
-    "static/js/2.e5cf967b.chunk.js": "/metservice-exercise-linus/static/js/2.e5cf967b.chunk.js",
-    "static/js/2.e5cf967b.chunk.js.map": "/metservice-exercise-linus/static/js/2.e5cf967b.chunk.js.map",
-    "static/js/3.d8bc5734.chunk.js": "/metservice-exercise-linus/static/js/3.d8bc5734.chunk.js",
-    "static/js/3.d8bc5734.chunk.js.map": "/metservice-exercise-linus/static/js/3.d8bc5734.chunk.js.map",
+    "main.css": "/metservice-exercise-linus/static/css/main.2858d8da.chunk.css",
+    "main.js": "/metservice-exercise-linus/static/js/main.1c4a6742.chunk.js",
+    "main.js.map": "/metservice-exercise-linus/static/js/main.1c4a6742.chunk.js.map",
+    "runtime-main.js": "/metservice-exercise-linus/static/js/runtime-main.07831fb9.js",
+    "runtime-main.js.map": "/metservice-exercise-linus/static/js/runtime-main.07831fb9.js.map",
+    "static/js/2.45b628e1.chunk.js": "/metservice-exercise-linus/static/js/2.45b628e1.chunk.js",
+    "static/js/2.45b628e1.chunk.js.map": "/metservice-exercise-linus/static/js/2.45b628e1.chunk.js.map",
+    "static/js/3.8f6c806d.chunk.js": "/metservice-exercise-linus/static/js/3.8f6c806d.chunk.js",
+    "static/js/3.8f6c806d.chunk.js.map": "/metservice-exercise-linus/static/js/3.8f6c806d.chunk.js.map",
     "index.html": "/metservice-exercise-linus/index.html",
-    "static/css/main.a9a80852.chunk.css.map": "/metservice-exercise-linus/static/css/main.a9a80852.chunk.css.map",
-    "static/js/2.e5cf967b.chunk.js.LICENSE.txt": "/metservice-exercise-linus/static/js/2.e5cf967b.chunk.js.LICENSE.txt"
+    "static/css/main.2858d8da.chunk.css.map": "/metservice-exercise-linus/static/css/main.2858d8da.chunk.css.map",
+    "static/js/2.45b628e1.chunk.js.LICENSE.txt": "/metservice-exercise-linus/static/js/2.45b628e1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.623600e0.js",
-    "static/js/2.e5cf967b.chunk.js",
-    "static/css/main.a9a80852.chunk.css",
-    "static/js/main.de435456.chunk.js"
+    "static/js/runtime-main.07831fb9.js",
+    "static/js/2.45b628e1.chunk.js",
+    "static/css/main.2858d8da.chunk.css",
+    "static/js/main.1c4a6742.chunk.js"
   ]
 }
